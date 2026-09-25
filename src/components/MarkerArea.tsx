@@ -422,7 +422,7 @@ const MarkerArea = forwardRef<MarkerAreaHandle, MarkerAreaProps>(
       onSelectedMarkerChange?.(m ?? null);
 
       if (continuous) {
-        createMarker(m.typeName);
+        createMarker(m.typeName, markerTypeToCreateParams ?? undefined);
       }
     };
 
