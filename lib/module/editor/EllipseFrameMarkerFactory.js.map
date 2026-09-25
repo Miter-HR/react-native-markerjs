@@ -1,0 +1,1 @@
+{"version":3,"names":["ShapeOutlineMarkerBaseFactory","EllipseFrameMarkerFactory","typeName"],"sourceRoot":"../../../src","sources":["editor/EllipseFrameMarkerFactory.ts"],"mappings":";;AAAA,SAASA,6BAA6B,QAAQ,oCAAiC;AAE/E,OAAO,MAAMC,yBAAyB,SAASD,6BAA6B,CAAC;EAC3E,OAAcE,QAAQ,GAAG,oBAAoB;AAC/C","ignoreList":[]}

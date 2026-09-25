@@ -1,0 +1,1 @@
+{"version":3,"names":["RectangularBoxMarkerBaseFactory","ShapeOutlineMarkerBaseFactory","typeName"],"sourceRoot":"../../../src","sources":["editor/ShapeOutlineMarkerBaseFactory.ts"],"mappings":";;AAAA,SAASA,+BAA+B,QAAQ,sCAAmC;AAEnF,OAAO,MAAMC,6BAA6B,SAASD,+BAA+B,CAAC;EACjF,OAAcE,QAAQ,GAAG,wBAAwB;AACnD","ignoreList":[]}

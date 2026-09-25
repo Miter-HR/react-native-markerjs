@@ -1,0 +1,1 @@
+{"version":3,"file":"FreehandMarkerFactory.d.ts","sourceRoot":"","sources":["../../../../src/editor/FreehandMarkerFactory.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,mBAAmB,EAAE,MAAM,6BAA6B,CAAC;AACvE,OAAO,EAAE,iBAAiB,EAAE,MAAM,qBAAqB,CAAC;AAExD,qBAAa,qBAAsB,SAAQ,iBAAiB;IAC1D,OAAc,QAAQ,SAAoB;WACnB,YAAY,CACjC,MAAM,CAAC,EAAE,OAAO,CAAC,mBAAmB,CAAC,GACpC,mBAAmB;CAOvB"}

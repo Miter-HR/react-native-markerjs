@@ -1,0 +1,1 @@
+{"version":3,"file":"LinearMarkerBaseFactory.d.ts","sourceRoot":"","sources":["../../../../src/editor/LinearMarkerBaseFactory.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,qBAAqB,EAAE,MAAM,+BAA+B,CAAC;AAC3E,OAAO,EAAE,iBAAiB,EAAE,MAAM,qBAAqB,CAAC;AAExD,qBAAa,uBAAwB,SAAQ,iBAAiB;IAC5D,OAAc,QAAQ,SAAsB;WACrB,YAAY,CACjC,MAAM,CAAC,EAAE,OAAO,CAAC,qBAAqB,CAAC,GACtC,qBAAqB;CAUzB"}

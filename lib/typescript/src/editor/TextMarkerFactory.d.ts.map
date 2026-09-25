@@ -1,0 +1,1 @@
+{"version":3,"file":"TextMarkerFactory.d.ts","sourceRoot":"","sources":["../../../../src/editor/TextMarkerFactory.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,eAAe,EAAE,MAAM,yBAAyB,CAAC;AAC/D,OAAO,EAAE,+BAA+B,EAAE,MAAM,mCAAmC,CAAC;AAEpF,qBAAa,iBAAkB,SAAQ,+BAA+B;IACpE,OAAc,QAAQ,SAAgB;WAEf,YAAY,CACjC,MAAM,CAAC,EAAE,OAAO,CAAC,eAAe,CAAC,GAChC,eAAe;CAUnB"}

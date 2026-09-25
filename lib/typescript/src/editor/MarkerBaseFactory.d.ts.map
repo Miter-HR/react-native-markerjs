@@ -1,0 +1,1 @@
+{"version":3,"file":"MarkerBaseFactory.d.ts","sourceRoot":"","sources":["../../../../src/editor/MarkerBaseFactory.ts"],"names":[],"mappings":"AAAA,OAAO,EAAkB,KAAK,eAAe,EAAE,MAAM,yBAAyB,CAAC;AAG/E,qBAAa,iBAAiB;IAC5B,OAAc,QAAQ,SAAgB;WAExB,YAAY,CAAC,CAAC,EAC1B,MAAM,CAAC,EAAE,OAAO,CAAC,CAAC,SAAS,eAAe,GAAG,CAAC,GAAG,eAAe,CAAC,GAChE,eAAe;CAWnB"}

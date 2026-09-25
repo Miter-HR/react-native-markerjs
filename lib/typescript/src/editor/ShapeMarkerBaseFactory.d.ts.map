@@ -1,0 +1,1 @@
+{"version":3,"file":"ShapeMarkerBaseFactory.d.ts","sourceRoot":"","sources":["../../../../src/editor/ShapeMarkerBaseFactory.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,oBAAoB,EAAE,MAAM,8BAA8B,CAAC;AACzE,OAAO,EAAE,6BAA6B,EAAE,MAAM,iCAAiC,CAAC;AAEhF,qBAAa,sBAAuB,SAAQ,6BAA6B;IACvE,OAAc,QAAQ,SAAqB;WACpB,YAAY,IAAI,oBAAoB;CAM5D"}

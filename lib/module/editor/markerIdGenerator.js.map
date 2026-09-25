@@ -1,0 +1,1 @@
+{"version":3,"names":["currentId","generateMarkerId"],"sourceRoot":"../../../src","sources":["editor/markerIdGenerator.ts"],"mappings":";;AAAA,IAAIA,SAAS,GAAG,CAAC;AAEjB,OAAO,MAAMC,gBAAgB,GAAGA,CAAA,KAAc;EAC5CD,SAAS,EAAE;EACX,OAAO,UAAUA,SAAS,EAAE;AAC9B,CAAC","ignoreList":[]}

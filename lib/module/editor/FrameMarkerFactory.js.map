@@ -1,0 +1,1 @@
+{"version":3,"names":["ShapeOutlineMarkerBaseFactory","FrameMarkerFactory","typeName"],"sourceRoot":"../../../src","sources":["editor/FrameMarkerFactory.ts"],"mappings":";;AAAA,SAASA,6BAA6B,QAAQ,oCAAiC;AAE/E,OAAO,MAAMC,kBAAkB,SAASD,6BAA6B,CAAC;EACpE,OAAcE,QAAQ,GAAG,aAAa;AACxC","ignoreList":[]}

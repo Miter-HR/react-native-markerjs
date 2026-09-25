@@ -1,0 +1,1 @@
+{"version":3,"file":"CalloutMarkerFactory.d.ts","sourceRoot":"","sources":["../../../../src/editor/CalloutMarkerFactory.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,kBAAkB,EAAE,MAAM,4BAA4B,CAAC;AACrE,OAAO,EAAE,iBAAiB,EAAE,MAAM,qBAAqB,CAAC;AAExD,qBAAa,oBAAqB,SAAQ,iBAAiB;IACzD,OAAc,QAAQ,SAAmB;WAElB,YAAY,IAAI,kBAAkB;CAW1D"}

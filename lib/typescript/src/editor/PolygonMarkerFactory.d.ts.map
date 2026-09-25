@@ -1,0 +1,1 @@
+{"version":3,"file":"PolygonMarkerFactory.d.ts","sourceRoot":"","sources":["../../../../src/editor/PolygonMarkerFactory.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,kBAAkB,EAAE,MAAM,4BAA4B,CAAC;AACrE,OAAO,EAAE,iBAAiB,EAAE,MAAM,qBAAqB,CAAC;AAExD,qBAAa,oBAAqB,SAAQ,iBAAiB;IACzD,OAAc,QAAQ,SAAmB;WAClB,YAAY,IAAI,kBAAkB;CAM1D"}

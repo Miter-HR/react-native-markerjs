@@ -1,0 +1,1 @@
+{"version":3,"file":"ImageMarkerBaseFactory.d.ts","sourceRoot":"","sources":["../../../../src/editor/ImageMarkerBaseFactory.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,oBAAoB,EAAE,MAAM,8BAA8B,CAAC;AACzE,OAAO,EAAE,iBAAiB,EAAE,MAAM,qBAAqB,CAAC;AAExD,qBAAa,sBAAuB,SAAQ,iBAAiB;IAC3D,OAAc,QAAQ,SAAqB;WACpB,YAAY,CACjC,MAAM,CAAC,EAAE,OAAO,CAAC,oBAAoB,CAAC,GACrC,oBAAoB;CAYxB"}

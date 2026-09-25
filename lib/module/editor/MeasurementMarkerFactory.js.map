@@ -1,0 +1,1 @@
+{"version":3,"names":["LinearMarkerBaseFactory","MeasurementMarkerFactory","typeName"],"sourceRoot":"../../../src","sources":["editor/MeasurementMarkerFactory.ts"],"mappings":";;AAAA,SAASA,uBAAuB,QAAQ,8BAA2B;AAEnE,OAAO,MAAMC,wBAAwB,SAASD,uBAAuB,CAAC;EACpE,OAAcE,QAAQ,GAAG,mBAAmB;AAC9C","ignoreList":[]}

@@ -1,0 +1,1 @@
+{"version":3,"file":"CoverMarkerFactory.d.ts","sourceRoot":"","sources":["../../../../src/editor/CoverMarkerFactory.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,oBAAoB,EAAE,MAAM,8BAA8B,CAAC;AACzE,OAAO,EAAE,sBAAsB,EAAE,MAAM,0BAA0B,CAAC;AAElE,qBAAa,kBAAmB,SAAQ,sBAAsB;IAC5D,OAAc,QAAQ,SAAiB;WAChB,YAAY,IAAI,oBAAoB;CAQ5D"}

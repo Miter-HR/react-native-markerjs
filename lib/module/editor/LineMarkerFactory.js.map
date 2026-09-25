@@ -1,0 +1,1 @@
+{"version":3,"names":["LinearMarkerBaseFactory","LineMarkerFactory","typeName"],"sourceRoot":"../../../src","sources":["editor/LineMarkerFactory.ts"],"mappings":";;AAAA,SAASA,uBAAuB,QAAQ,8BAA2B;AAEnE,OAAO,MAAMC,iBAAiB,SAASD,uBAAuB,CAAC;EAC7D,OAAcE,QAAQ,GAAG,YAAY;AACvC","ignoreList":[]}

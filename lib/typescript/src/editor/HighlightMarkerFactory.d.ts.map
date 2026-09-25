@@ -1,0 +1,1 @@
+{"version":3,"file":"HighlightMarkerFactory.d.ts","sourceRoot":"","sources":["../../../../src/editor/HighlightMarkerFactory.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,oBAAoB,EAAE,MAAM,8BAA8B,CAAC;AACzE,OAAO,EAAE,sBAAsB,EAAE,MAAM,0BAA0B,CAAC;AAElE,qBAAa,sBAAuB,SAAQ,sBAAsB;IAChE,OAAc,QAAQ,SAAqB;WACpB,YAAY,IAAI,oBAAoB;CAS5D"}

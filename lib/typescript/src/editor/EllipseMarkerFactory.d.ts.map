@@ -1,0 +1,1 @@
+{"version":3,"file":"EllipseMarkerFactory.d.ts","sourceRoot":"","sources":["../../../../src/editor/EllipseMarkerFactory.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,oBAAoB,EAAE,MAAM,8BAA8B,CAAC;AACzE,OAAO,EAAE,sBAAsB,EAAE,MAAM,0BAA0B,CAAC;AAElE,qBAAa,oBAAqB,SAAQ,sBAAsB;IAC9D,OAAc,QAAQ,SAAmB;WAClB,YAAY,IAAI,oBAAoB;CAQ5D"}
