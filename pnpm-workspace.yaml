@@ -1,0 +1,4 @@
+packages:
+  - example
+allowBuilds:
+  '@evilmartians/lefthook': false
