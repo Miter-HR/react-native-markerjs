@@ -13,6 +13,7 @@ interface RectangularBoxMarkerBaseEditorProps extends MarkerBaseEditorProps {
   marker: RectangularBoxMarkerBaseState;
   isResizable?: boolean;
   onLongPress?: () => void;
+  onTap?: () => void;
 }
 
 type ManipulationMode = 'move' | 'resize' | 'rotate';
@@ -38,6 +39,7 @@ const RectangularBoxMarkerBaseEditor: React.FC<
   onMarkerChange,
   onMarkerCreate,
   onLongPress,
+  onTap,
 }) => {
   // what type of manipulation is currently active
   const [manipulationMode, setManipulationMode] =
@@ -74,6 +76,7 @@ const RectangularBoxMarkerBaseEditor: React.FC<
   const LONG_PRESS_DELAY = 500;
   const longPressTimeout = useRef<number | NodeJS.Timeout | null>(null);
   const longPressTriggered = useRef(false);
+  const didMove = useRef(false);
 
   const cancelLongPress = () => {
     if (longPressTimeout.current) {
@@ -98,6 +101,7 @@ const RectangularBoxMarkerBaseEditor: React.FC<
     });
 
     longPressTriggered.current = false;
+    didMove.current = false;
     longPressTimeout.current = setTimeout(() => {
       longPressTriggered.current = true;
       onLongPress?.();
@@ -117,6 +121,7 @@ const RectangularBoxMarkerBaseEditor: React.FC<
     }
 
     cancelLongPress();
+    didMove.current = true;
 
     // Convert rotation to radians
     const angle = ((marker.rotationAngle || 0) * Math.PI) / 180;
@@ -180,6 +185,9 @@ const RectangularBoxMarkerBaseEditor: React.FC<
   };
   const handleResponderRelease = () => {
     cancelLongPress();
+    if (!didMove.current && !longPressTriggered.current) {
+      onTap?.();
+    }
 
     setManipulationMode('move');
 

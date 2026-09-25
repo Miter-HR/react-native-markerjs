@@ -80,6 +80,11 @@ export interface MarkerAreaProps {
    * @param annotation Updated annotation state.
    */
   onAnnotationChange?: (annotation: AnnotationState) => void;
+  /**
+   * Callback invoked when the user taps an existing text marker to edit it.
+   * Host apps can show their own editor instead of the built-in fullscreen Modal.
+   */
+  onTextMarkerEdit?: (marker: MarkerBaseState) => void;
 }
 
 type MarkerAreaMode = 'create' | 'select';
@@ -106,6 +111,7 @@ const MarkerArea = forwardRef<MarkerAreaHandle, MarkerAreaProps>(
       scaleStroke = true,
       onAnnotationChange,
       onSelectedMarkerChange,
+      onTextMarkerEdit,
     },
     ref
   ) => {
@@ -498,6 +504,7 @@ const MarkerArea = forwardRef<MarkerAreaHandle, MarkerAreaProps>(
                         );
                       }
                     }}
+                    onTextMarkerEdit={onTextMarkerEdit}
                   />
                 );
               })}
@@ -514,6 +521,7 @@ const MarkerArea = forwardRef<MarkerAreaHandle, MarkerAreaProps>(
                     setCreatingMarker(m);
                   }}
                   onMarkerCreate={handleMarkerCreate}
+                  onTextMarkerEdit={onTextMarkerEdit}
                 />
               )}
             </Svg>
