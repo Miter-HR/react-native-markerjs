@@ -4,10 +4,13 @@ import { LinearMarkerBaseFactory } from './LinearMarkerBaseFactory';
 export class ArrowMarkerFactory extends LinearMarkerBaseFactory {
   public static typeName = 'ArrowMarker';
 
-  public static override createMarker(): ArrowMarkerState {
+  public static override createMarker(
+    params?: Partial<ArrowMarkerState>
+  ): ArrowMarkerState {
     return {
-      ...super.createMarker(),
+      ...super.createMarker(params),
       arrowType: 'end',
+      ...params,
     };
   }
 }
