@@ -24,9 +24,15 @@ const TextMarker: React.FC<TextMarkerProps> = ({
 }: TextMarkerProps) => {
   const lines = text.split(/\r\n|[\n\v\f\r\x85\u2028\u2029]/);
 
-  const LINE_SPACING = 0.1;
-  const lineHeight = (props.height - (props.padding ?? 0) * 2) / lines.length;
-  const fontSizePx = lineHeight - lineHeight * LINE_SPACING;
+  // Use the stored font size (dashboard markerjs3 does this). The stock RN
+  // renderer derived fontSize from box height and set the first TSpan dy to
+  // that full line-height, which put the baseline at the bottom of the box.
+  const fontSizePx =
+    fontSize?.units === 'rem' ? fontSize.value * 16 : (fontSize?.value ?? 16);
+  const padding = props.padding ?? 2;
+  // markerjs3 TextBlock.positionText for a single line:
+  // y = padding + textHeight/2 + lineHeight/3 + offsetY (offsetY = padding)
+  const firstBaseline = padding * 2 + (fontSizePx * 5) / 6;
 
   return (
     <RectangularBoxMarkerBase {...props}>
@@ -49,7 +55,7 @@ const TextMarker: React.FC<TextMarkerProps> = ({
             fontFamily={fontFamily}
             fontSize={`${fontSizePx}px`}
             x={props.width / 2}
-            dy={lineHeight}
+            dy={lineno === 0 ? firstBaseline : fontSizePx}
           >
             {line}
           </TSpan>
