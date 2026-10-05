@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useEffect, useState } from 'react';
 import { G } from 'react-native-svg';
 import type { LinearMarkerBaseState } from '../../core/LinearMarkerBaseState';
 import Grip from './Grip';
@@ -116,8 +116,11 @@ const LinearMarkerBaseEditor: React.FC<LinearMarkerBaseEditorProps> = ({
     onMarkerChange?.(updatedMarker);
   };
 
-  // handle start of the creation of a new marker
-  useEffect(() => {
+  // Handle start of the creation of a new marker. useLayoutEffect (not useEffect) so the
+  // x1/y1 correction from the factory's 0,0 default commits before the first paint --
+  // otherwise a fast drag can move x2/y2 away from the uncorrected 0,0 origin before a
+  // deferred effect catches up, flashing a segment from the canvas corner.
+  useLayoutEffect(() => {
     if (gestureStartLocation) {
       startManipulation(gestureStartLocation);
       // Only update if the gestureStartLocation is different from marker's current position
