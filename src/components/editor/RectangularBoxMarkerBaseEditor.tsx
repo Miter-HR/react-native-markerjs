@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useEffect, useRef, useState } from 'react';
 import { G, Line, Rect } from 'react-native-svg';
 import type { RectangularBoxMarkerBaseState } from '../../core/RectangularBoxMarkerBaseState';
 import Grip from './Grip';
@@ -227,8 +227,11 @@ const RectangularBoxMarkerBaseEditor: React.FC<
     return true;
   };
 
-  // handle start of the creation of a new marker
-  useEffect(() => {
+  // Handle start of the creation of a new marker. useLayoutEffect (not useEffect) so the
+  // left/top correction from the factory's 0,0 default commits before the first paint --
+  // otherwise a fast tap/drag can finish the gesture (and lock in 0,0) before a deferred
+  // effect gets a chance to run.
+  useLayoutEffect(() => {
     if (gestureStartLocation) {
       startManipulation(gestureStartLocation);
       // Only update if the gestureStartLocation is different from marker's current position

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useEffect, useState } from 'react';
 import { G, Rect } from 'react-native-svg';
 import MarkerBaseEditor, {
   type MarkerBaseEditorProps,
@@ -85,8 +85,10 @@ const FreehandMarkerEditor: React.FC<FreehandMarkerEditorProps> = ({
     onMarkerChange?.(updatedMarker);
   };
 
-  // handle start of the creation of a new marker
-  useEffect(() => {
+  // Handle start of the creation of a new marker. useLayoutEffect (not useEffect) so the
+  // first point commits before the first paint, for the same reason as the rectangular and
+  // linear marker editors (see their useLayoutEffect comments).
+  useLayoutEffect(() => {
     if (gestureStartLocation) {
       startManipulation(gestureStartLocation);
       // Only update if the gestureStartLocation is different from marker's current position
