@@ -64,6 +64,15 @@ const RectangularBoxMarkerBaseEditor: React.FC<
     x: 0,
     y: 0,
   });
+  // A drag up or left moves the top-left corner so width and height stay positive.
+  const creationOriginRef = useRef<{
+    left: number;
+    top: number;
+    pageX: number;
+    pageY: number;
+  } | null>(null);
+  // Placed once per gesture so a later render cannot pull the box back to the pointer-down point.
+  const placedCreationOriginRef = useRef<GestureLocation | null>(null);
   // Center position in page coordinates for rotation manipulation
   const [
     manipulationStartCenterPagePosition,
@@ -233,10 +242,18 @@ const RectangularBoxMarkerBaseEditor: React.FC<
   // effect gets a chance to run.
   useLayoutEffect(() => {
     if (gestureStartLocation) {
-      startManipulation(gestureStartLocation);
       // Only update if the gestureStartLocation is different from marker's current position
       const newLeft = gestureStartLocation.locationX / zoomFactor;
       const newTop = gestureStartLocation.locationY / zoomFactor;
+      creationOriginRef.current = {
+        left: newLeft,
+        top: newTop,
+        pageX: gestureStartLocation.pageX / zoomFactor,
+        pageY: gestureStartLocation.pageY / zoomFactor,
+      };
+      if (placedCreationOriginRef.current === gestureStartLocation) return;
+      placedCreationOriginRef.current = gestureStartLocation;
+      startManipulation(gestureStartLocation);
       if (marker.left !== newLeft || marker.top !== newTop) {
         const updatedMarker: RectangularBoxMarkerBaseState = {
           ...marker,
@@ -247,6 +264,8 @@ const RectangularBoxMarkerBaseEditor: React.FC<
           onMarkerChange(updatedMarker);
         }
       }
+    } else {
+      placedCreationOriginRef.current = null;
     }
     // Only depend on gestureStartLocation and onMarkerChange
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -254,23 +273,30 @@ const RectangularBoxMarkerBaseEditor: React.FC<
 
   // handle changes during the creation of a new marker
   useEffect(() => {
-    if (gestureMoveLocation) {
-      const dx = Math.max(
-        gestureMoveLocation.pageX / zoomFactor - manipulationStartPosition.x,
-        0
-      );
-      const dy = Math.max(
-        gestureMoveLocation.pageY / zoomFactor - manipulationStartPosition.y,
-        0
-      );
+    const origin = creationOriginRef.current;
+    if (gestureMoveLocation && origin) {
+      const rawWidth = gestureMoveLocation.pageX / zoomFactor - origin.pageX;
+      const rawHeight = gestureMoveLocation.pageY / zoomFactor - origin.pageY;
+      const width = Math.abs(rawWidth);
+      const height = Math.abs(rawHeight);
+      const left = origin.left + Math.min(rawWidth, 0);
+      const top = origin.top + Math.min(rawHeight, 0);
       if (
-        (marker.width !== dx || marker.height !== dy) &&
-        (Math.abs(marker.width - dx) > 3 || Math.abs(marker.height - dy) > 3) // throttle small changes
+        (marker.left !== left ||
+          marker.top !== top ||
+          marker.width !== width ||
+          marker.height !== height) &&
+        (Math.abs(marker.left - left) > 3 ||
+          Math.abs(marker.top - top) > 3 ||
+          Math.abs(marker.width - width) > 3 ||
+          Math.abs(marker.height - height) > 3) // throttle small changes
       ) {
         const updatedMarker: RectangularBoxMarkerBaseState = {
           ...marker,
-          width: dx,
-          height: dy,
+          left,
+          top,
+          width,
+          height,
         };
         if (onMarkerChange) {
           onMarkerChange(updatedMarker);
