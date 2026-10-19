@@ -90,7 +90,7 @@
     "react-native": "*",
     "react-native-svg": "^15.12.0"
   },
-  "packageManager": "pnpm@11.25.0",
+  "packageManager": "pnpm@12.14.0",
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": [
